@@ -1,0 +1,7 @@
+#RAG,通过外接知识库或者API新增大模型的能力
+基于https://github.com/chatchat-space/Langchain-Chatchat.git这个项目实现RAG及agent功能
+
+#向量数据库
+Milvus、Faiss等
+
+embedding模型：文本向量化模型，常见的有m3e-*、bge-*等模型。

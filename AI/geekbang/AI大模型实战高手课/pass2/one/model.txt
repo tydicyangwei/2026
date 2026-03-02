@@ -1,0 +1,2 @@
+#chatglm3-6b的下载和安装
+下载地址：https://www.modelscope.cn/models/ZhipuAI/chatglm3-6b/summary
