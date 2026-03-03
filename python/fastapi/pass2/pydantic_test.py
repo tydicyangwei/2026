@@ -1,9 +1,3 @@
-## 第二课
-尽量使用typing的Annotated申明参数的相关属性。
-
-### 请求体
-* Pydantic
-```javascript
 from pydantic import BaseModel, Field, ValidationError
 
 class User(BaseModel):
@@ -16,12 +10,3 @@ try:
     print(user.model_dump_json())  # {"id":123,"name":"Alice","age":30}
 except ValidationError as e:
     print(e)
-```
-* body_test.py
-
-### 查询参数及校验
-* find_check_test.py
-
-### 路径参数及校验
-* path_check_test.py
-
