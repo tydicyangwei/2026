@@ -140,3 +140,8 @@ async def read_items():
 #### 总结
 * 针对不同场景，可以随意使用不同的 Pydantic 模型并通过继承复用,当一个实体需要具备不同的状态时，无需只为该实体定义一个数据模型。例如，用户实体就可能有包含 password、包含 password_hash 以及不含密码等多种状态。
 
+### 状态码
+* fastapi.status
+状态码作为装饰器函数(get/post/put等)的参数使用
+
+

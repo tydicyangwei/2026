@@ -19,6 +19,9 @@ class UserOut(UserBase):
 
 
 class UserInDB(UserBase):
+    model_config = {
+        "extra": "ignore"   # 额外字段禁止
+        }
     hashed_password: str
 
 
