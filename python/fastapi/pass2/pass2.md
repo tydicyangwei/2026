@@ -145,3 +145,43 @@ async def read_items():
 状态码作为装饰器函数(get/post/put等)的参数使用
 
 
+### 表单
+* form_test.py
+使用Form来申明表单数据
+* 表单模型
+* form_model_test.py
+* 禁止额外表单字段
+model_config = {"extra": "forbid"}
+
+### 文件
+* file_test.py
+#### 多文件上传
+* file_mul_test.py
+#### 小结
+使用 File、bytes 和 UploadFile 来声明在请求中上传的文件，它们以表单数据发送。
+fastapi.File、fastapi.UploadFile
+
+### 表单和文件
+* 同时使用form表单数据和file文件数据
+示例：
+```javascript
+from typing import Annotated
+
+from fastapi import FastAPI, File, Form, UploadFile
+
+app = FastAPI()
+
+@app.post("/files/")
+async def create_file(
+    file: Annotated[bytes, File()],
+    fileb: Annotated[UploadFile, File()],
+    token: Annotated[str, Form()],
+):
+    return {
+        "file_size": len(file),
+        "token": token,
+        "fileb_content_type": fileb.content_type,
+    }
+```
+
+
