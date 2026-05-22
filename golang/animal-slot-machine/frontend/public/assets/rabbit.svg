@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-label="rabbit">
+  <circle cx="80" cy="80" r="72" fill="#efe9ff"/>
+  <path d="M54 22c19 14 24 43 14 70-25-12-30-42-14-70Z" fill="#d7c7ee"/>
+  <path d="M106 22c-19 14-24 43-14 70 25-12 30-42 14-70Z" fill="#d7c7ee"/>
+  <path d="M58 34c9 12 12 28 6 43-13-10-15-27-6-43Z" fill="#f5bed0"/>
+  <path d="M102 34c-9 12-12 28-6 43 13-10 15-27 6-43Z" fill="#f5bed0"/>
+  <circle cx="80" cy="89" r="45" fill="#f7f2fb"/>
+  <circle cx="64" cy="84" r="6" fill="#20262e"/>
+  <circle cx="96" cy="84" r="6" fill="#20262e"/>
+  <path d="M80 96l10 8-10 8-10-8Z" fill="#e88ba6"/>
+  <path d="M58 117c12 9 32 9 44 0" fill="none" stroke="#b795cf" stroke-width="6" stroke-linecap="round"/>
+</svg>
