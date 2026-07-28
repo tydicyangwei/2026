@@ -3,6 +3,12 @@ package main
 
 import "fmt"
 
+func init() {
+	var a = 10
+	fmt.Println("init")
+	fmt.Println(a)
+	fmt.Printf("a type: %T\n", a)
+}
 func fact(n int) int {
 	if n == 0 {
 		return 1

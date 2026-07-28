@@ -6,16 +6,16 @@ L1 = [11,15,16,21,23,24,28,29,31,33] #长冷
 L2 = [3,4,5,8,9,10,12,13,19,25,27,30] #长温
 L3 = [1,2,6,7,14,17,18,20,22,26,32] #长热
 
-M1 = [4,5,8,27,30] #短冷
-M2 = [9,14,15,16,17,19,20,26] #短温
-M3 = [1,3,6,7,10,11,12,13,14,18,19,21,22,23,24,28,29,31,33] #短热
+M1 = [5,20,26] #短冷
+M2 = [1,3,8,13,21,23,27,28,29] #短温
+M3 = [2,4,6,7,9,10,11,12,14,15,16,17,18,19,22,24,25,30,31,32,33] #短热
 
 N1 = [1,2,3,4,5,6,7,8,9,10,11]
 N2 = [12,13,14,15,16,17,18,19,20,21,22]
 N3 = [23,24,25,26,27,28,29,30,31,32,33]
 
-F = [1,2,3,4,6,8,11,14,15,19,24,26,32,33]  # 禁止集
-R = [12,25]  # 必须包含恰好1个元素
+F = [1,2,5,8,9,10,14,20,26,28,29,32,33]  # 禁止集
+R = [24,27,31]  # 必须包含恰好1个元素
 
 def check_adjacent_numbers(numbers):
     """检查列表中是否有相邻的数"""
@@ -33,7 +33,7 @@ def validate_combination(combo):
     if any(num in F for num in combo):
         return False
     
-    # 条件2: L1:L2:L3 = 2:2:2
+    # 条件2: L1:L2:L3 = 2:2:2 主推4-1-1和2-3-1
     count_L1 = sum(1 for num in combo if num in L1)
     count_L2 = sum(1 for num in combo if num in L2)
     count_L3 = sum(1 for num in combo if num in L3)
@@ -41,15 +41,15 @@ def validate_combination(combo):
     if count_L1 != 2 or count_L2 != 2 or count_L3 != 2:
         return False
     
-    # 条件3: M1:M2:M3 = 1:1:4
+    # 条件3: M1:M2:M3 = 0:2:4 主推1-1-4和1-0-5和0-1-5
     count_M1 = sum(1 for num in combo if num in M1)
     count_M2 = sum(1 for num in combo if num in M2)
     count_M3 = sum(1 for num in combo if num in M3)
     
-    if count_M1 != 1 or count_M2 != 1 or count_M3 != 4:
+    if count_M1 != 0 or count_M2 != 2 or count_M3 != 4:
         return False
     
-    # 条件4: N1:N2:N3 = 2:2:2
+    # 条件4: N1:N2:N3 = 2:2:2 #2026-4-2 主推1-3-2和1-2-3
     count_N1 = sum(1 for num in combo if num in N1)
     count_N2 = sum(1 for num in combo if num in N2)
     count_N3 = sum(1 for num in combo if num in N3)
@@ -62,8 +62,8 @@ def validate_combination(combo):
     if count_R != 1:
         return False
     
-    # 条件6: 包含相邻的数
-    if not check_adjacent_numbers(combo):
+    # 条件6: 不包含相邻的数
+    if check_adjacent_numbers(combo):
         return False
     
     return True
